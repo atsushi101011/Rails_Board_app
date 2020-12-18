@@ -30,11 +30,11 @@ module RunteqNormal
     # Don't generate system test files.
     config.generators.system_tests = nil
 
-    config.generators do |g|  # ここから追記
-      g.assets false          # CSS, JavaScriptファイル生成せず
-      g.skip_routes true     # trueならroutes.rb変更せず、falseなら通常通り変更
-      g.test_framework false  # testファイル生成せず
+    config.generators do |g| 
+      g.assets false  
+      g.skip_routes true
+      g.test_framework false
       g.helper false
-    end                  
+    end                       
   end
 end
