@@ -1,5 +1,4 @@
 <header>
-  <% if logged_in? %>
   <nav class='navbar navbar-expand-lg navigation navbar-light bg-light'>
     <a class='navbar-brand' href='/'>
       <%= image_tag 'logo.png' %>
@@ -39,8 +38,5 @@
           </li>
         </ul>
       </div>
-    <% else %>
-      <%= render 'layouts/before_login_header' %>
-    <% end %>
   </nav>
 </header>
