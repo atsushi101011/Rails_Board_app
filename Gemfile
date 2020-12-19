@@ -7,6 +7,9 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'font-awesome-sass'
 
+gem 'pry-byebug'
+gem 'sorcery'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
