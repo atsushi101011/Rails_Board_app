@@ -4,8 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.4'
 
 gem 'bootstrap', '~> 4.1.1'
-gem 'jquery-rails'
+gem 'draper'
 gem 'font-awesome-sass'
+gem 'jquery-rails'
+
 
 gem 'pry-byebug'
 gem 'rails-i18n', '~> 5.1'
