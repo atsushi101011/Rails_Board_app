@@ -14,6 +14,6 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to root_path,flash: { success: 'ログアウトしました' }
+    redirect_to root_path, flash: { success: 'ログアウトしました' }
   end
 end
