@@ -1,0 +1,8 @@
+ja:
+  users:
+    new:
+      title: "ログインページへ"
+
+  user_sessions:
+      new:
+        title: '登録ページへ'

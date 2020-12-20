@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'font-awesome-sass'
 
 gem 'pry-byebug'
+gem 'rails-i18n', '~> 5.1'
 gem 'sorcery'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
