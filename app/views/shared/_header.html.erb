@@ -33,8 +33,8 @@
               <div class='dropdown-item'>current_user.first_name</div>
               <div class='dropdown-divider'></div>
               <%= link_to "プロフィール", current_user, {class:'dropdown-item'} %>
-              <%= link_to "ログアウト", logout_path, {method: :delete, class:'dropdown-item'} %>
-            </div>
+              <%= link_to (t 'defaults.logout'), logout_path, class: 'dropdown-item', method: :delete %>
+              </div>
           </li>
         </ul>
       </div>

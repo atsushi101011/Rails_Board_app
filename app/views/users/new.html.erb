@@ -1,5 +1,5 @@
-<h1>New User</h1>
+<h1><%= t '.title' %></h1>
 
 <%= render 'form', user: @user %>
 
-<%= link_to t('.title') , login_path %>
+<%= link_to t('.to_login_page') , login_path %>
