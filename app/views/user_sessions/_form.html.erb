@@ -1,10 +1,10 @@
 <%= form_with(url: login_path, local: true, method: :post) do |f| %>
   <div class="field">
-    <%= f.label :メールアドレス %><br />
+    <%= f.label :email, t('activerecord.attributes.user.email') %><br />
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :パスワード %><br />
+    <%= f.label :password, t('activerecord.attributes.user.password') %><br />
     <%= f.password_field :password %>
   </div>
   <div class="actions">
