@@ -7,8 +7,6 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'draper'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
-
-
 gem 'pry-byebug'
 gem 'rails-i18n', '~> 5.1'
 gem 'sorcery'
