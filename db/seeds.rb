@@ -1,20 +1,17 @@
-6.times do |n|
-  last_name = Faker::Name.name
-  first_name = Faker::Name.name
-  email = "example-#{n+1}@railstutorial.org"
-  password = "password"
-  User.create!(last_name: last_name,
-               first_name: first_name,
-               email: email,
-               password: password,
-               password_confirmation: password)
+10.times do
+  User.create(
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      email: Faker::Internet.email,
+      password: '12345678',
+      password_confirmation: '12345678'
+  )
 end
 
-20.times do |n|
-title = Faker::Dessert.variety
-body = Faker::Dessert.variety
-user = User.find(rand(1..6))
-Board.create!(title: title,
-              body: body,
-              user: user)
+20.times do |index|
+  Board.create(
+      user: User.offset(rand(User.count)).first,
+      title: "タイトル#{index}",
+      body: "本文#{index}"
+  )
 end
