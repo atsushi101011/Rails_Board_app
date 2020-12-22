@@ -5,6 +5,7 @@ ruby '2.6.4'
 
 gem 'bootstrap', '~> 4.1.1'
 gem 'draper'
+gem 'faker'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'pry-byebug'
