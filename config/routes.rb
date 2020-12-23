@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
 
   resources :boards
-  #get 'boards', to: 'boards#index'
-  #get 'boards/new', to: 'boards#new'
-  #post 'boards' to: 'boards#create'
+  # get 'boards', to: 'boards#index'
+  # get 'boards/new', to: 'boards#new'
+  # post 'boards' to: 'boards#create'
 end
