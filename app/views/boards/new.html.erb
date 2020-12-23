@@ -4,12 +4,12 @@
       <h1>掲示板作成</h1>
         <%= form_with(model: @board, local: true) do |f| %>
           <div class="form-group">
-            <%= f.label :タイトル %><br />
+            <%= f.label "タイトル" %><br />
             <%= f.text_field :title %>
           </div>
 
           <div class="form-group">
-            <%= f.label :本文 %><br />
+            <%= f.label "本文" %><br />
             <%= f.text_field :body %>
           </div>
 
