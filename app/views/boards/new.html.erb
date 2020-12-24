@@ -1,31 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 offset-lg-2">
-      <h1>掲示板作成</h1>
-        <%= form_with(model: @board, local: true) do |f| %>
-          <% if @board.errors.any? %>
-            <div id="error_explanation">
-              <ul>
-              <% @board.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-              </ul>
-            </div>
-          <% end %>
-
-          <div class="form-group">
-            <%= f.label :title %>
-            <%= f.text_field :title, class: 'form-control' %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label :body %>
-            <%= f.text_area :body, class: 'form-control', rows: 10 %>
-          </div>
-
-          <%= f.submit class: 'btn btn-primary' %>
-
-        <% end %>
+      <h1><%= t('.title') %></h1>
+      <%= render 'form', { board: @board } %>
     </div>
   </div>
 </div>
