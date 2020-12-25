@@ -5,6 +5,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   process resize_to_fit: [300, 200]
 
+  def default_url
+    'board_placeholder.png'
+  end
+
   # jpg,jpeg,gif,pngのみ
   def extension_white_list
     %w[jpg jpeg gif png]
