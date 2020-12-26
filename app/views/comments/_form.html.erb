@@ -1,0 +1,11 @@
+<%= form_with model: [@board, @comment], local: true do |f| %>
+
+  <div class="row mb-3">
+    <div class="col-lg-8 offset-lg-2">
+      <%= f.label :body %>
+      <%= f.text_area :body, class: 'form-control' %>
+    </div>
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+
+<% end %>
