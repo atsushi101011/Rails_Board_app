@@ -27,9 +27,7 @@ class BoardsController < ApplicationController
   end
 
   def edit
-    if current_user == set_board.user
-      @board = Board.find(params[:id])
-    end
+    return unless current_user == set_board.user
   end
 
   def update
@@ -43,10 +41,9 @@ class BoardsController < ApplicationController
   end
 
   def destroy
-    if current_user == set_board.user
-      @board.destroy
-      redirect_to boards_path, success: t('.success')
-    end
+    return unless current_user == set_board.user
+    @board.destroy
+    redirect_to boards_path, success: t('.success')
   end
 
   private
@@ -56,6 +53,6 @@ class BoardsController < ApplicationController
   end
 
   def set_board
-    @board =current_user.boards.find(params[:id])
+    @board = current_user.boards.find(params[:id])
   end
 end
