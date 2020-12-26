@@ -41,9 +41,10 @@ class BoardsController < ApplicationController
   end
 
   def destroy
-    return unless current_user == set_board.user
-    @board.destroy
-    redirect_to boards_path, success: t('.success')
+    if current_user == set_board.user
+      @board.destroy!
+      redirect_to boards_path, success: t('.success')
+    end
   end
 
   private
