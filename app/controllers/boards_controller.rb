@@ -43,8 +43,8 @@ class BoardsController < ApplicationController
 
   def destroy
     return unless current_user == set_board.user
-      @board.destroy!
-      redirect_to boards_path, success: t('.success')
+    @board.destroy!
+    redirect_to boards_path, success: t('.success')
   end
 
   private
@@ -56,5 +56,4 @@ class BoardsController < ApplicationController
   def set_board
     @board = current_user.boards.find(params[:id])
   end
-
 end
