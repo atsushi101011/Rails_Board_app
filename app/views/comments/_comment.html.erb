@@ -7,7 +7,12 @@
     <div id="js-comment-25">
       <p><%= comment.body %></p>
     </div>
-  </td
+    <div style="display: none;">
+      <textarea class="form-control mb-1">コメントです</textarea>
+      <button class="btn btn-light">キャンセル</button>
+      <button class="btn btn-success">更新</button>
+    </div>
+  </td>
   <td class="action">
   <% if comment.user == current_user %>
     <div class='mr10 float-right'>
