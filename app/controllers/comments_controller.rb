@@ -1,11 +1,11 @@
 class CommentsController < ApplicationController
   def create
-    @comment = current_user.comments.build(comment_params)
-    if @comment.save
-      redirect_to board_path(params[:board_id]), success: t('.success')
+    comment = current_user.comments.build(comment_params)
+    if comment.save
+      redirect_to board_path(comment.board), success: t('.success')
     else
       flash[:danger] = t('.fail')
-      redirect_to board_path(params[:board_id])
+      redirect_to board_path(comment.board)
     end
   end
 
