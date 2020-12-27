@@ -6,9 +6,7 @@
          <h4 class="card-title">
            <%=link_to board.title, board_path(board) %>
          </h4>
-         <% if current_user == board.user %>
-           <%= render 'crud_menus', board: board %>
-         <% end %>
+         <%= render 'crud_menus', board: board if current_user.own?(board) %>
          <ul class="list-inline">
            <li class="list-inline-item">
              <%= icon 'far', 'user' %>
