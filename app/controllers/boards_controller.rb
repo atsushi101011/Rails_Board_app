@@ -1,5 +1,6 @@
 class BoardsController < ApplicationController
   before_action :require_login
+  before_action :find_board, only: [:edit, :update, :destroy]
 
   def index
     @boards = Board.all.includes(:user).order(created_at: :desc)
@@ -25,12 +26,9 @@ class BoardsController < ApplicationController
     @comments = @board.comments.includes(:user).order(created_at: :desc)
   end
 
-  def edit
-    @board = current_user.boards.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @board = current_user.boards.find(params[:id])
     if @board.update(board_params)
       redirect_to @board, success: t('.success')
     else
@@ -40,7 +38,6 @@ class BoardsController < ApplicationController
   end
 
   def destroy
-    @board = current_user.boards.find(params[:id])
     @board.destroy!
     redirect_to boards_path, success: t('.success')
   end
@@ -49,5 +46,9 @@ class BoardsController < ApplicationController
 
   def board_params
     params.require(:board).permit(:title, :body, :board_image, :board_image_cache)
+  end
+
+  def find_board
+    @board = current_user.boards.find(params[:id])
   end
 end
