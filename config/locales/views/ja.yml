@@ -43,6 +43,11 @@ ja:
      create:
        success: 'コメントを作成しました'
        fail: 'コメントを作成できませんでした'
+   bookmarks:
+     create:
+       flash_bookmark: 'ブックマークしました'
+     destroy:
+       flash_not_bookmark: 'ブックマークを外しました'
    profiles:
      show:
        title: 'プロフィール'
