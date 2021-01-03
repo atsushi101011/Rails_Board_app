@@ -1,7 +1,7 @@
 class Board < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
-  has_many :bookmarks
+  has_many :bookmarks, dependent: :destroy
   has_many :users, through: :bookmarks
 
   validates :title, presence: true, length: { maximum: 255 }
