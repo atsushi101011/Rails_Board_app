@@ -1,1 +1,3 @@
-<%= link_to icon('fas', 'star'), board_bookmarks_path(board.id), method: :delete, remote: true, id: :"js-bookmark-button-for-board-#{board.id}" %>
+<%= link_to board_bookmarks_path(board.id), method: :delete, remote: true, id: "js-bookmark-button-for-board-#{board.id}" do %>
+  <%= icon('fas', 'star') %>
+<% end %>

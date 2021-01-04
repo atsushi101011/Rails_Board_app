@@ -1,11 +1,11 @@
 class BookmarksController < ApplicationController
   def create
-    @bookmark = current_user.bookmarks.build(board_id: params[:board_id])
-    @bookmark.save!
+    @board = Board.find(params[:board_id])
+    current_user.bookmark(@board)
   end
 
   def destroy
-    @bookmark = current_user.bookmarks.find_by(board_id: params[:board_id])
-    @bookmark.destroy!
+    @board = Board.find(params[:board_id])
+    current_user.unbookmark(@board)
   end
 end
