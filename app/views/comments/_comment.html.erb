@@ -23,7 +23,7 @@
            </a>
          </li>
          <li class="list-inline-item">
-           <%= link_to comment_path(comment.id), method: :delete, data: { confirm: "削除しますか？" }, remote: true, id: "js-table-comment", class: 'js-delete-comment-button' do %>
+           <%= link_to comment_path(comment.id), method: :delete, data: { confirm: "削除しますか？" }, remote: true, class: 'js-delete-comment-button' do %>
              <%= icon 'fa', 'trash' %>
            <% end %>
          </li>
