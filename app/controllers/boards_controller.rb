@@ -3,7 +3,8 @@ class BoardsController < ApplicationController
   before_action :find_board, only: %i[edit update destroy]
 
   def index
-    @boards = Board.all.includes(:user).order(created_at: :desc).page(params[:page])
+    @q = Board.ransack(params[:q])
+    @boards = @q.result.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new
@@ -43,6 +44,7 @@ class BoardsController < ApplicationController
   end
 
   def bookmarks
+    @q = Board.ransack(params[:q])
     @boards = current_user.bookmark_boards.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
@@ -54,5 +56,9 @@ class BoardsController < ApplicationController
 
   def find_board
     @board = current_user.boards.find(params[:id])
+  end
+
+  def search_params
+    params.require(:q).permit!
   end
 end
