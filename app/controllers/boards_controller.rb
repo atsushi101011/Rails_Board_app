@@ -3,7 +3,7 @@ class BoardsController < ApplicationController
   before_action :find_board, only: %i[edit update destroy]
 
   def index
-    @boards = Board.all.includes(:user).order(created_at: :desc).page params[:page]
+    @boards = Board.all.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new
@@ -43,7 +43,7 @@ class BoardsController < ApplicationController
   end
 
   def bookmarks
-    @boards = current_user.bookmark_boards.includes(:user).order(created_at: :desc).page params[:page]
+    @boards = current_user.bookmark_boards.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   private
