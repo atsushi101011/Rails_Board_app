@@ -1,0 +1,28 @@
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <h1 class="float-left mb-5">プロフィール</h1>
+      <%= link_to '編集', edit_profile_path, class: 'btn btn-success float-right' %>
+      <table class="table">
+        <tr>
+          <th scope="row">メールアドレス</th>
+          <td><%= @user.email %></td>
+        </tr>
+        <tr>
+          <th scope="row">氏名</th>
+          <td><%= @user.decorate.full_name %></td>
+        </tr>
+        <tr>
+          <th scope="row">アバター</th>
+          <td>
+          <% if @user.image_name.present? %>
+          　<%= image_tag @user.image_name_url, size: '60x60', class: 'rounded-circle mr15'%>
+          <% else %>
+          　<%= image_tag 'sample', size: '60x60', class: 'rounded-circle mr15'%>
+          <% end %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

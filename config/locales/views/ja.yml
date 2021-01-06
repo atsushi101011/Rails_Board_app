@@ -51,3 +51,8 @@ ja:
    profiles:
      show:
        title: 'プロフィール'
+     edit:
+       title: 'プロフィール編集'
+     update:
+       success: 'ユーザーを更新しました'
+       fail: 'ユーザーを更新できませんでした'

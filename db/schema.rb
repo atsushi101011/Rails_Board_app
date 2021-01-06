@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_03_064909) do
+ActiveRecord::Schema.define(version: 2021_01_06_001826) do
 
   create_table "boards", force: :cascade do |t|
     t.string "title", null: false
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2021_01_03_064909) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.string "image_name"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
