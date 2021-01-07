@@ -15,13 +15,7 @@
         </tr>
         <tr>
           <th scope="row">アバター</th>
-          <td>
-          <% if @user.image_name.present? %>
-          　<%= image_tag @user.image_name_url, size: '60x60', class: 'rounded-circle mr15'%>
-          <% else %>
-          　<%= image_tag 'sample', size: '60x60', class: 'rounded-circle mr15'%>
-          <% end %>
-          </td>
+          <td><%= image_tag @user.image_name_url, size: '60x60', class: 'rounded-circle mr15'%></td>
         </tr>
       </table>
     </div>

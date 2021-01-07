@@ -1,15 +1,12 @@
 class ProfilesController < ApplicationController
-  def show
-    @user = current_user
-  end
+  before_action :set_user
 
-  def edit
-    @user = current_user
-  end
+  def show; end
+
+  def edit; end
 
   def update
-    @user = current_user
-    if @user.update(profile_params)
+    if @user.update(user_params)
       redirect_to profile_path, success: t('.success')
     else
       flash.now['danger'] = t('.fail')
@@ -19,7 +16,11 @@ class ProfilesController < ApplicationController
 
   private
 
-  def profile_params
+  def set_user
+    @user = User.find(current_user.id)
+  end
+
+  def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :image_name, :image_name_cache)
   end
 end
