@@ -13,6 +13,8 @@ class User < ApplicationRecord
   validates :first_name, presence: true, length: { maximum: 255 }
   validates :last_name, presence: true, length: { maximum: 255 }
 
+  validates :reset_password_token, uniqueness: true, allow_nil: true
+
   mount_uploader :image_name, ImageUploader
 
   def own?(object)
@@ -30,4 +32,5 @@ class User < ApplicationRecord
   def bookmark?(board)
     bookmark_boards.include?(board)
   end
+
 end
