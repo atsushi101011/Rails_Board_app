@@ -32,5 +32,4 @@ class User < ApplicationRecord
   def bookmark?(board)
     bookmark_boards.include?(board)
   end
-
 end

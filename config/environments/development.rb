@@ -61,5 +61,5 @@ Rails.application.configure do
   host = Settings.host
   Rails.application.routes.default_url_options[:host] = host
   config.action_mailer.delivery_method = :letter_opener_web
-  config.action_mailer.default_url_options = {host: host}
+  config.action_mailer.default_url_options = { host: host }
 end
