@@ -17,6 +17,8 @@ class User < ApplicationRecord
 
   mount_uploader :image_name, ImageUploader
 
+  enum role: {general: 0, admin: 1}
+
   def own?(object)
     object.user_id == id
   end

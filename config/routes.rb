@@ -13,4 +13,9 @@ Rails.application.routes.draw do
   end
   resource :profile, only: %i[show edit update]
   resources :password_resets, only: %i[new create edit update]
+
+  namespace :admin do
+    get 'login', to: 'user_sessions#new'
+    root 'dashboards#index'
+  end
 end
