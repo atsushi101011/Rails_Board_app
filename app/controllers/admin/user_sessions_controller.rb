@@ -1,4 +1,3 @@
 class Admin::UserSessionsController < Admin::BaseController
-  def new
-  end
+  def new; end
 end
