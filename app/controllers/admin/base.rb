@@ -10,6 +10,6 @@ class Admin::Base < ApplicationController
   end
 
   def check_admin
-    redirect_to root_path, warning: t('defaults.message.not_authorized') unless current_user.admin?
+    redirect_to root_path, warning: t('defaults.not_authorized') unless current_user.admin?
   end
 end
