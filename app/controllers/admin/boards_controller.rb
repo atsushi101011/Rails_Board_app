@@ -1,17 +1,13 @@
 class Admin::BoardsController < Admin::Base
   before_action :require_login
-  before_action :find_board, only: %i[edit update destroy]
+  before_action :find_board, only: %i[edit show update destroy]
 
   def index
     @q = Board.ransack(params[:q])
     @boards = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
-  def show
-    @board = Board.find(params[:id])
-    @comment = Comment.new
-    @comments = @board.comments.includes(:user).order(created_at: :desc)
-  end
+  def show; end
 
   def edit; end
 
