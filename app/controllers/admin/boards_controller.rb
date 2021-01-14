@@ -7,7 +7,6 @@ class Admin::BoardsController < Admin::Base
     @boards = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
-
   def show
     @board = Board.find(params[:id])
     @comment = Comment.new
