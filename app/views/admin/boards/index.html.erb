@@ -1,0 +1,29 @@
+<% content_for(:title, t('.title')) %>
+<div class="container mb-5 pt-2">
+  <h1><%= t('.title') %></h1>
+
+  <div class="row">
+    <div class="col-md-12 mb-3">
+      <!-- 検索フォーム -->
+      <%= render 'search_form', q: @q, url: admin_boards_path %>
+    </div>
+  </div>
+  <!-- 掲示板一覧 -->
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">タイトル</th>
+      <th scope="col">作成者</th>
+      <th scope="col">作成日時</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @boards %>
+  </tbody>
+  </table>
+  <%= paginate @boards, theme: 'twitter-bootstrap-4' %>
+</div>
+
+
+
