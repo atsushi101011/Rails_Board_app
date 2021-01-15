@@ -22,7 +22,4 @@ Rails.application.routes.draw do
     resources :boards, only: %i[index edit update show destroy]
     resources :users, only: %i[index edit update show destroy]
   end
-
-  get '*path', to: 'application#error_500'
-  get '*path', to: 'application#error_404'
 end
