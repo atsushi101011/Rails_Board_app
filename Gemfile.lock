@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/smartinez87/exception_notification.git
+  revision: 28b2f3329d09f02abc9d3d6d21100cde59917e2d
+  specs:
+    exception_notification (4.4.3)
+      actionmailer (>= 4.0, < 7)
+      activesupport (>= 4.0, < 7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -321,6 +329,7 @@ GEM
     selenium-webdriver (3.142.3)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
+    slack-notifier (2.3.2)
     sorcery (0.15.0)
       bcrypt (~> 3.1)
       oauth (~> 0.4, >= 0.4.4)
@@ -374,6 +383,7 @@ DEPENDENCIES
   config
   draper
   enum_help
+  exception_notification!
   factory_bot_rails
   faker
   font-awesome-sass
@@ -394,6 +404,7 @@ DEPENDENCIES
   rubocop-checkstyle_formatter
   rubocop-rails
   sass-rails (~> 5.0)
+  slack-notifier
   sorcery
   spring
   spring-watcher-listen (~> 2.0.0)

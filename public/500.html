@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>予期せぬエラー</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   .rails-default-error-page {
@@ -56,11 +56,10 @@
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
+  <div class="error-content">
+    <div class="error-content-type">500</div>
+    <h1 class="error-content-title">一時的なエラーが発生しました。</h1>
+    <p class="error-content-desc">時間をおいて再度お試しください。</p>
   </div>
 </body>
 </html>
