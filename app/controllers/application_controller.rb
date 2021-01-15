@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
-  add_flash_types :success, :info, :warning, :danger
-
   rescue_from StandardError, with: :render_500
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
+  add_flash_types :success, :info, :warning, :danger
 
   private
 
